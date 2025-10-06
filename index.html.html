@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="ताजे फुलं थेट शेतातून — मरिगोल्ड, गुलाब, गालंदा शेवंती, आजच ऑर्डर करा">
+  <title>फुल विक्री — शेतकरी पुत्र</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+  <style>
+    html,body {height:100%;margin:0;font-family: 'Noto Sans Devanagari', "Segoe UI", Roboto, Arial, sans-serif;}
+    body {
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg,#fff4e6 0%, #ffe6f0 100%);
+      overflow:hidden; color:#222;
+    }
+    .bg-image {
+      position:fixed; inset:0;
+      background-image: url('https://images.unsplash.com/photo-1599423300746-b62533397364?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600'); /* Vibrant flowers */
+      background-size:cover; 
+      background-position:center;
+      filter: brightness(1.2) saturate(1.5) contrast(1.3);
+      z-index:0;
+    }
+    .overlay {position:fixed; inset:0; background:rgba(6,6,6,0.28); z-index:1;}
+    .card-wrap {position:relative; z-index:2; width:100%; max-width:1000px; margin:28px; }
+    .card {
+      display:flex; gap:18px; padding:22px; border-radius:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.88));
+      box-shadow: 0 18px 50px rgba(10,10,10,0.18); align-items:center;
+    }
+    .left {flex:1 1 60%;}
+    h1.title {margin:0 0 8px; font-size:clamp(22px,4.2vw,38px); color:#173A2F;}
+    p.subtitle {margin:0 0 14px; color:#2c4b3a; font-weight:600;}
+    .info {background:#fff9f4; padding:12px; border-radius:10px; display:inline-block; box-shadow: 0 6px 18px rgba(0,0,0,0.06);}
+    .cta {display:flex; gap:12px; margin-top:14px; flex-wrap:wrap;}
+    .btn {
+      display:inline-block; text-decoration:none; padding:12px 16px; border-radius:12px;
+      font-weight:800; letter-spacing:0.3px;
+      background: linear-gradient(90deg,#ff8a00,#ffb86b); color:#2b1600;
+      box-shadow: 0 10px 30px rgba(255,140,40,0.12);
+      transition: all 0.2s ease;
+    }
+    .btn:hover {transform: translateY(-2px); box-shadow: 0 12px 36px rgba(255,140,40,0.2);}
+    .secondary {background:transparent; border:1px solid rgba(40,40,40,0.06); color:#173A2F; padding:10px 14px; font-weight:700; border-radius:12px; transition: all 0.2s ease;}
+    .secondary:hover {background:#f0f0f0;}
+    .right {flex:0 0 300px; text-align:left;}
+    .seller {
+      background: linear-gradient(180deg,#fff,#f7fff9); padding:14px; border-radius:12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.03);
+    }
+    .seller h3 {margin:0 0 6px; font-size:18px; color:#0b3b2e;}
+    .seller p {margin:4px 0; font-weight:700; color:#234b3a;}
+    .small {font-size:13px; opacity:0.9; margin-top:6px;}
+    /* modal */
+    .modal {position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:9999; transition: opacity 0.3s ease;}
+    .modal-backdrop {position:absolute; inset:0; background:rgba(0,0,0,0.6);}
+    .modal-box {
+      position:relative; width:92%; max-width:520px; border-radius:16px; padding:20px;
+      background: linear-gradient(180deg,#ffffff,#fffdf8); box-shadow: 0 40px 120px rgba(0,0,0,0.45);
+      text-align:center;
+    }
+    .stamp {display:inline-block; background:#ffefdf; padding:8px 12px; border-radius:999px; font-weight:900; margin-bottom:10px;}
+    .modal h2 {margin:8px 0 6px; color:#0b3b2e;}
+    .modal p {margin:0 0 14px; color:#234b3a;}
+    .close {background:transparent; border:0; padding:8px 10px; font-weight:800; cursor:pointer;}
+    @media (max-width:760px){
+      .card {flex-direction:column; align-items:stretch;}
+      .right{flex:unset;}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <div class="card-wrap">
+    <div class="card" role="region" aria-label="फुल विक्री कार्ड">
+      <div class="left">
+        <h1 class="title">फुल विक्री — आजच ऑर्डर करा</h1>
+        <p class="subtitle">ताजे फुलं — थेट शेतातून | मरिगोल्ड, गुलाब, गालंदा शेवंती आणि खास डील</p>
+
+        <div class="info">
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <div><strong>प्रमाण:</strong> मर्यादित</div>
+            <div><strong>वस्तू:</strong> मरिगोल्ड / गुलाब / गालंदा शेवंती</div>
+            <div><strong>वितरण:</strong> स्थानिक क्षेत्रात</div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="https://wa.me/917823053308?text=नमस्कार%2C%20मी%20फुलांचे%20ऑर्डर%20द्यायचे%20आहे.%20किंमत%20आणि%20उपलब्धता%20कृपया%20कळवा." target="_blank" rel="noopener">WhatsApp वर ऑर्डर करा</a>
+          <a class="secondary" href="#more" onclick="openModal();return false;">ताबडतोब माहिती</a>
+        </div>
+
+        <div class="small">टीप: बुकिंगसाठी WhatsApp वर संपर्क करा. अग्रिम पैसे/कन्फर्मेशन नंतर ऑर्डर तिकीट तयार होईल.</div>
+      </div>
+
+      <div class="right">
+        <div class="seller" aria-label="विक्रेत्याबद्दल माहिती">
+          <h3>विक्रेता माहिती</h3>
+          <p>नाव: <strong>केशव डाखोरे पाटील</strong></p>
+          <p>मो. : <strong>+91 78230 53308</strong></p>
+          <p>पत्ता: <strong>वाशीम ,सुरकंडी(Tq. Dist. - Washim)</strong></p>
+
+          <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-start; flex-wrap:wrap;">
+            <a class="btn" href="tel:+917823053308">थेट कॉल करा</a>
+            <a class="secondary" href="https://wa.me/917823053308?text=नमस्कार%2C%20मी%20फुलांचे%20ऑर्डर%20द्यायचे%20आहे." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" style="display:none;">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-box" role="document">
+      <div class="stamp">शेतकरी पुत्र स्पेशल</div>
+      <h2>फुलांची विक्री सुरु — लगेच ऑर्डर करा!</h2>
+      <p>विक्रेता: केशव डाखोरे पाटील<br>मो. +91 78230 53308<br>पत्ता:वाशीम ,सुरकंडी</p>
+
+      <div style="display:flex; gap:10px; justify-content:center; margin-top:12px; flex-wrap:wrap;">
+        <a class="btn" href="https://wa.me/917823053308?text=नमस्कार%2C%20मला%20फुल%20ऑर्डर%20करायचे%20आहे.%20किंमत%20आणि%20उपलब्धता%20कृपया%20कळवा." target="_blank" rel="noopener">WhatsApp वर संपर्क</a>
+        <button class="close" onclick="closeModal()">बंद करा</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function(){
+      setTimeout(openModal, 450);
+    });
+    function openModal(){
+      document.getElementById('modal').style.display = 'flex';
+      var btn = document.querySelector('.close');
+      if(btn) btn.focus();
+    }
+    function closeModal(){
+      document.getElementById('modal').style.display = 'none';
+    }
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
